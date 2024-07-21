@@ -59,6 +59,8 @@ def create_friend():
 # delete
 @app.route('/api/friends/<int:id>', methods=['DELETE'])
 def delete_friend(id):
+    """ Route that deletes a friend from the database.
+    """
     try:
         friend = Friend.query.get(id)
         if friend is None:
@@ -75,6 +77,8 @@ def delete_friend(id):
 # update friend profile
 @app.route('/api/friends/<int:id>', methods=['PATCH'])
 def update_friend(id):
+    """ Route that updates a friend's profile in the database.
+    """
     try:
         friend = Friend.query.get(id)
         if friend is None:
