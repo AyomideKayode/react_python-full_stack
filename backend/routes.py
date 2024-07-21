@@ -29,7 +29,8 @@ def create_friend():
         required_fields = ["name", "role", "description", "gender"]
         for field in required_fields:
             if field not in data:
-                return jsonify({"error":f'Missing required field: {field}'}), 400
+                return jsonify({
+                    "error": f'Missing required field: {field}'}), 400
 
         name = data.get("name")
         role = data.get("role")
@@ -43,7 +44,8 @@ def create_friend():
         else:
             img_url = None
 
-        new_friend = Friend(name=name, role=role, description=description, gender=gender, img_url=img_url)
+        new_friend = Friend(
+            name=name, role=role, description=description, gender=gender, img_url=img_url)
 
         db.session.add(new_friend)
         db.session.commit()
@@ -53,17 +55,41 @@ def create_friend():
         db.session.rollback()
         return jsonify({"error": str(e)}), 500  # Return an error message
 
+
 # delete
 @app.route('/api/friends/<int:id>', methods=['DELETE'])
 def delete_friend(id):
     try:
         friend = Friend.query.get(id)
         if friend is None:
-            return jsonify({"error":"Oops, friend not found."}), 404
+            return jsonify({"error": "Oops, friend not found."}), 404
         # secure changes in the database
         db.session.delete(friend)
         db.session.commit()
-        return jsonify({"msg":"Friend deleted."}), 200
+        return jsonify({"msg": "Friend deleted."}), 200
     except Exception as e:
         db.session.rollback()
-        return jsonify({"error":str(e)}), 500
+        return jsonify({"error": str(e)}), 500
+
+
+# update friend profile
+@app.route('/api/friends/<int:id>', methods=['PATCH'])
+def update_friend(id):
+    try:
+        friend = Friend.query.get(id)
+        if friend is None:
+            return jsonify({"error": "Oops, friend not found."}), 404
+
+        data = request.json  # Get the JSON data from the request
+        # update the friend's profile with new data as provided in the request
+        # if the data is not provided, retain the old data
+        friend.name = data.get("name", friend.name)
+        friend.role = data.get("role", friend.role)
+        friend.description = data.get("description", friend.description)
+        friend.gender = data.get("gender", friend.gender)
+
+        db.session.commit()  # save changes to db
+        return jsonify(friend.to_json()), 200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"error": str(e)}), 500
