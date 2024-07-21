@@ -3,7 +3,6 @@
 """ Main application file that initializes the Flask app and the database.
 """
 
-import routes
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
@@ -16,6 +15,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+import routes  # api routes
 
 with app.app_context():  # Create tables in the database if they don't exist
     db.create_all()
