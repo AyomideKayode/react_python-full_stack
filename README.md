@@ -1,7 +1,7 @@
 # Python and React App
 
 ```bash
-(web_venv) ayomide@Kazzywiz:~/react_python-full_stack/backend$ python3 app.py 
+(web_venv) ayomide@Kazzywiz:~/react_python-full_stack/backend$ python3 app.py
  * Serving Flask app 'app'
  * Debug mode: on
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
@@ -45,3 +45,18 @@ Here's the step-by-step process I followed:
 - Send the Request: Clicked the `Send` button to submit the request.
 
 Upon correctly setting the headers and body, the server successfully processed the request, resulting in a success message confirming the creation of the new friend record. This step is crucial for ensuring that the server understands the format of the incoming data and can handle it appropriately.
+
+## For frontend
+
+- Commands used for setting up and other stuff
+  - installing chakra ui
+
+  ```bash
+  npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+  ```
+
+  - icons
+
+    ```bash
+    npm i react-icons
+    ```
