@@ -24,7 +24,7 @@ function App() {
           mb={8}
         >
           {/* Render a Text component with a gradient background and the text "My Besties" */}
-          <Text as={"span"} bgGradient={"linear(to-r, cyan.400, blue.500)"} bgClip={"text"}>My Besties</Text>
+          <Text as={"span"} bgGradient={"linear(to-r, cyan.400, blue.500)"} bgClip={"text"}>Friends App</Text>
           🚀
         </Text>
 
