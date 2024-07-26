@@ -42,7 +42,7 @@ const UserGrid = ({ users, setUsers }) => {
         gap={4}
       >
         {users.map((user) => (
-          <UserCard key={user.id} user={user} />
+          <UserCard key={user.id} user={user} setUsers={setUsers} />
         ))}
       </Grid>
 
