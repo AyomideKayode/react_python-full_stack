@@ -58,11 +58,28 @@ Navigate to _`http://localhost:3000`_ to see the application in action.
 - **_`src/components/UserCard.jsx`_**: A card component to display individual friend details with edit and delete options.
 - **_`src/components/EditModal.jsx`_**: A modal component for editing friend details.
 
-## Next Steps
+## Deployment
 
-The next phase of this project involves connecting the frontend to the backend API built earlier. This will enable dynamic data fetching, adding, editing, and deleting friends in a real-time database.
+To deploy the application and link it with the backend:
 
-Stay tuned for more updates and feel free to contribute or provide feedback!
+**_Build the Frontend_**:
+
+```bash
+cd frontend
+npm run build
+```
+
+- This command generates a `dist` folder containing the optimized and minified static files (HTML, CSS, JS) for production. These files are essential for serving the React application as static assets.
+
+**_Integrate with Backend_**:
+
+Ensure the backend is set up to serve static files from the dist folder. In your app.py, add the following configuration:
+
+- This setup ensures that Flask serves the static files from the dist folder, handling any frontend routes by sending back the index.html file for client-side routing.
+
+**_Deploy on Render_**:
+
+Host your Flask application on Render, ensuring the dist folder is correctly referenced in the deployment configuration.
 
 ## Acknowledgements
 
