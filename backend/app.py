@@ -16,16 +16,20 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-frontend_folder = os.path.join(os.getcwd(), "..", "frontend")  # Path to the frontend folder
-dist_folder = os.path.join(frontend_folder, "dist")  # Path to the dist folder where the React app is built
+# Path to the frontend folder
+frontend_folder = os.path.join(os.getcwd(), "..", "frontend")
+# Path to the dist folder where the React app is built
+dist_folder = os.path.join(frontend_folder, "dist")
+
 
 # Serve static files from the "dist" folder under the "frontend" directory
-@app.route('/', defaults={"filename":""})
+@app.route('/', defaults={"filename": ""})
 @app.route('/<path:filename>')
 def index(filename):  # Serve the index.html file
     if not filename:
-        filename = "index.html"  # If no filename is provided, serve index.html 
+        filename = "index.html"  # If no filename is provided, serve index.html
     return send_from_directory(dist_folder, filename)
+
 
 import routes  # api routes
 

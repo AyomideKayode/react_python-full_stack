@@ -46,7 +46,8 @@ def create_friend():
             img_url = None
 
         new_friend = Friend(
-            name=name, role=role, description=description, gender=gender, img_url=img_url)
+            name=name, role=role,
+            description=description, gender=gender, img_url=img_url)
 
         db.session.add(new_friend)
         db.session.commit()
