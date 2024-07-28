@@ -91,6 +91,8 @@ _`POST /api/friends`_
 
   - Error: `500 Internal Server Error` if an exception occurs
 
+  ![Post Request](../imgs/postman_post_test.JPG)
+
 #### Get All Friends
 
 _`GET /api/friends`_
@@ -116,6 +118,8 @@ _`GET /api/friends`_
   ```
 
   - Error: `500 Internal Server Error` if an exception occurs
+
+  ![Get Request](../imgs/postman_get_test.JPG)
 
 #### Update a Friend's Profile
 
@@ -161,6 +165,8 @@ _`PATCH /api/friends/2`_
 
   - Error: `500 Internal Server Error` if an exception occurs
 
+  ![Patch Request](../imgs/postman_update_test.JPG)
+
 #### Delete a Friend
 
 _`DELETE /api/friends/2`_
@@ -186,6 +192,8 @@ _`DELETE /api/friends/2`_
   ```
 
   - Error: `500 Internal Server Error` if an exception occurs
+
+  ![Delete Request](../imgs/postman_delete_test.JPG)
 
 ### Models
 

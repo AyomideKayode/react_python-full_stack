@@ -1,6 +1,8 @@
-# My Besties 🚀
+# Friends App 🚀
 
-Welcome to **My Besties**, an interactive web application that showcases my journey of learning and implementing modern web development technologies. This project leverages **React** for building the user interface and **Chakra UI** for stylish and responsive components.
+Welcome to **Friends App**, an interactive web application that showcases my journey of learning and implementing modern web development technologies. This project leverages **React** for building the user interface and **Chakra UI** for stylish and responsive components.
+
+![App Overview](../imgs/frontend_dev.JPG)
 
 Credits to [Burakorkmez](https://www.youtube.com/watch?v=tWHXaSC2T_s) for an amazing crash course to test the waters.
 
@@ -57,6 +59,21 @@ Navigate to _`http://localhost:3000`_ to see the application in action.
 - **_`src/components/UserGrid.jsx`_**: A grid layout to display the list of friends.
 - **_`src/components/UserCard.jsx`_**: A card component to display individual friend details with edit and delete options.
 - **_`src/components/EditModal.jsx`_**: A modal component for editing friend details.
+
+## Extras
+
+- Commands used for setting up and other stuff
+  - installing chakra ui
+
+  ```bash
+  npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+  ```
+
+  - icons
+
+    ```bash
+    npm i react-icons
+    ```
 
 ## Deployment
 
