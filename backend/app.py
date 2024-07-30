@@ -38,4 +38,4 @@ with app.app_context():  # Create tables in the database if they don't exist
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=5000, debug=True)
