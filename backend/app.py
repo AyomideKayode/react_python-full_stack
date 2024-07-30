@@ -31,7 +31,8 @@ def index(filename):  # Serve the index.html file
     return send_from_directory(dist_folder, filename)
 
 
-import routes  # api routes
+# api routes
+import routes
 
 with app.app_context():  # Create tables in the database if they don't exist
     db.create_all()
