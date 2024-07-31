@@ -41,7 +41,7 @@ const CreateUserModal = ({ setUsers }) => {
     e.preventDefault(); // prevent page refresh
     setIsLoading(true); // set loading to true
     try {
-      const res = await fetch(BASE_URL + "/friends", {
+      const res = await fetch(`${BASE_URL}/api/friends`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

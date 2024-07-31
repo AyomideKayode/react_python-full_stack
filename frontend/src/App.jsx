@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar"
 import UserGrid from "./components/UserGrid"
 import { useState } from "react"
 
-export const BASE_URL = "http://127.0.0.1:5000/api" // Define the base URL for the API
+export const BASE_URL = "http://127.0.0.1:5000" // Define the base URL for the API
 
 function App() {
   // Define a state variable called "users" and a function to update it called "setUsers"

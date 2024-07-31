@@ -35,7 +35,7 @@ function EditModal({ setUsers, user }) {
 		e.preventDefault(); // prevent the default form submission
 		setIsLoading(true); // set loading to true
 		try {
-			const res = await fetch(BASE_URL + "/friends/" + user.id, {
+			const res = await fetch(`${BASE_URL}/api/friends/${user.id}`, {
 				method: "PATCH",
 				headers: {
 					"Content-Type": "application/json",
